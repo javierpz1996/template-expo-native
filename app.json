@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "login-app",
+    "name": "RouteBox",
     "slug": "login-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -13,19 +13,54 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cursoapp.mapas"
     },
     "android": {
+      "package": "com.cursoapp.mapas",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB8rxKRp47MaRlMQB7GLRsRDNrHxLlsUXk"
+        }
+      }
     },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Permite a la app usar tu ubicación para mostrarla en el mapa."
+        }
+      ],
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
     "web": {
       "bundler": "metro",
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9d2634dd-1f64-46e9-85f0-b63997705390"
+      },
+      "googleMapsApiKey": "AIzaSyB8rxKRp47MaRlMQB7GLRsRDNrHxLlsUXk"
+    },
+    "owner": "javierpenia"
   }
 }
